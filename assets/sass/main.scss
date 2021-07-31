@@ -1,0 +1,318 @@
+$colors: ("dark-blue": #4E79A7,
+    "light-blue": #A0CBE8,
+    "yellow-one": #F28E2B,
+    "yellow-two": #FFBE7D,
+    "green-one": #59A14F,
+    "green-two": #8CD17D,
+    "yellow-three": #B6992D,
+    "yellow-four": #F1CE63,
+    "green-three": #499894,
+    "green-four": #86BCB6,
+    "red-one": #E15759,
+    "pink": #FF9D9A,
+);
+
+@function color($color-name) {
+    @return map-get($colors, $color-name);
+}
+
+// Render icons
+@each $color,
+$glyph in $colors {
+    .square-filled.#{$color} {
+        background-color: $glyph;
+        border: 2px solid #818181;
+        width: 30px;
+        height: 20px;
+    }
+}
+
+/* Vector 3 */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+label,
+a {
+    margin: 0;
+    line-height: 1;
+    padding: 0;
+    list-style-type: none;
+}
+
+a {
+    font-family: Roboto;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.5px;
+    text-align: left;
+
+}
+
+.title {
+    font-family: Rambla;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 26px;
+    letter-spacing: 0.15000000596046448px;
+}
+
+
+// ICONS
+
+
+
+
+// CUSTOM SELECT
+select {
+    -webkit-appearance: none;
+    appearance: none;
+    -moz-appearance: none;
+}
+
+.customized-select {
+    border: 1px solid #c4c4c4;
+    background: white;
+    width: 100%;
+    font-size: 13px;
+    position: relative;
+
+    &::after {
+        content: "";
+        width: 1px;
+        height: 100%;
+        position: absolute;
+        background-color: #c4c4c4;
+        top: 0;
+        right: 39px;
+    }
+
+    select {
+        background-image: url(../images/arrow-select.svg);
+        border: none;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 37px;
+        letter-spacing: .150000006px;
+        text-align: left;
+        background-repeat: no-repeat;
+        background-position: calc(100% - 14px) center;
+        position: relative;
+
+
+
+        &:focus {
+            outline: 0;
+        }
+
+    }
+
+    strong {
+        font-family: Rambla;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 37px;
+        letter-spacing: 1.15px;
+        border-right: 1px solid #c4c4c4;
+    }
+}
+
+// CUSTOM SELECT
+
+
+// HEADER
+.header {
+    &__logo {
+
+        background: #eee;
+        padding: 24px 27px;
+
+
+        img {
+            width: 87%;
+        }
+    }
+
+    &__site-title {
+        text-align: center;
+
+        h2 {
+            /* Venezuela Organized Crime Observatory */
+            font-family: Rambla;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 35px;
+            /* line-height: 26px; */
+            letter-spacing: .15px;
+            color: #000;
+        }
+
+        p {
+            /* Profiles, maps, investigations, analysis and policy recommendations on criminal actors and dynamics */
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 12px;
+            line-height: 16px;
+            color: #000;
+            margin-top: 5px;
+        }
+    }
+
+
+    &__actions {
+
+        height: 103px;
+
+        a {
+            /* ABOUT */
+            border-left: 3px solid #EEEEEE;
+            font-family: Rambla;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 16px;
+            line-height: 37px;
+            letter-spacing: 1.15px;
+            color: #504c4b;
+            padding: 0 24px;
+        }
+
+    }
+
+
+    &__menu {
+        background-color: #000;
+    }
+
+    &__item-menu {
+        padding-top: 4px;
+        border-bottom: 7px solid #000;
+
+        a {
+            font-family: Rambla;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 34px;
+            letter-spacing: 1.1499999762px;
+            text-align: left;
+            color: #fff;
+            padding: 1px 12px 0px;
+            display: block;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+
+        &:hover,
+        &.active {
+            border-bottom: 7px solid #B70039;
+
+        }
+    }
+}
+
+// HEADER
+
+
+// ALL ABOUT
+.all-about {
+    &__item {
+        p {
+            margin-bottom: 0;
+            font-family: Rambla;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 17px;
+            letter-spacing: 0em;
+            text-transform: uppercase;
+        }
+
+    }
+}
+
+// ALL ABOUT
+
+
+// FOOTER
+.footer {
+    background-color: #EEEEEE;
+    padding: 62px 0;
+
+    &__back-top {
+        button {
+            background-image: url(../images/arrow-top.svg);
+            background-repeat: no-repeat;
+            font-family: Roboto;
+            font-size: 13px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 20px;
+            padding: 10px 0 0 0;
+            text-align: left;
+            border: none;
+        }
+    }
+
+    &__rights {
+        font-family: Roboto;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 20px;
+        text-align: left;
+
+        .special-text {
+            font-family: Noto Serif;
+            font-size: 16px;
+            font-style: italic;
+            font-weight: 400;
+            line-height: 37px;
+            letter-spacing: 2.1500000953674316px;
+            text-align: left;
+
+        }
+    }
+
+    &__item-menu {
+        margin-bottom: 21px;
+
+        a {
+            border-bottom: 7px solid transparent;
+            padding-top: 4px;
+            font-family: Rambla;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 700;
+            letter-spacing: 1.149999976158142px;
+            text-align: left;
+            color: #000;
+            text-transform: uppercase;
+
+            &:hover {
+                text-decoration: none;
+                border-bottom: 7px solid #B70039;
+            }
+
+            &.active {
+                border-bottom: 7px solid #B70039;
+
+            }
+        }
+
+    }
+}
+
+// FOOTER
